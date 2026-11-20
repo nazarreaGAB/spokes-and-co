@@ -1,0 +1,9 @@
+{
+  "name": "Spokes & Co. (Node + GnuCOBOL)",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:22",
+  "postCreateCommand": "sudo apt-get update && sudo apt-get install -y gnucobol && npm run build:cobol",
+  "forwardPorts": [4173],
+  "portsAttributes": {
+    "4173": { "label": "Spokes & Co.", "onAutoForward": "openBrowser" }
+  }
+}

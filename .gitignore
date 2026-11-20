@@ -1,0 +1,4 @@
+node_modules/
+# compiled COBOL program (rebuilt with npm run build:cobol)
+backend/shop
+backend/shop.exe

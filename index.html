@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Spokes &amp; Co. | Bike Shop</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="top">
+    <div class="wrap top-inner">
+      <a class="brand" href="./">
+        <svg viewBox="0 0 40 40" width="34" height="34" aria-hidden="true">
+          <circle cx="20" cy="20" r="17" fill="none" stroke="currentColor" stroke-width="3"/>
+          <circle cx="20" cy="20" r="3" fill="currentColor"/>
+          <g stroke="currentColor" stroke-width="1.6">
+            <line x1="20" y1="3" x2="20" y2="37"/><line x1="3" y1="20" x2="37" y2="20"/>
+            <line x1="8" y1="8" x2="32" y2="32"/><line x1="32" y1="8" x2="8" y2="32"/>
+          </g>
+        </svg>
+        <span>Spokes <em>&amp;</em> Co.</span>
+      </a>
+      <span id="pill" class="pill">Checking backend…</span>
+    </div>
+  </header>
+
+  <div id="banner" class="banner" hidden>
+    <strong>Browser-only preview.</strong>
+    You can browse and fill a basket, but checkout is disabled because prices are calculated by the COBOL backend.
+    Open this project in GitHub Codespaces and run <code>npm start</code> for the real shop.
+  </div>
+
+  <main class="wrap layout">
+    <section class="shop" aria-label="Products">
+      <div class="hero">
+        <h1>Find your ride.</h1>
+        <p>Pick your gear, set the quantity, and watch the total update live. Every peso is calculated by our COBOL checkout.</p>
+      </div>
+
+      <div class="toolbar">
+        <div class="chips" id="chips" role="tablist" aria-label="Categories"></div>
+        <input id="search" type="search" placeholder="Search bikes and gear…" aria-label="Search products">
+        <button id="reset" class="btn ghost" type="button">Reset stock</button>
+      </div>
+
+      <div id="status" class="notice" hidden></div>
+      <div id="grid" class="grid"></div>
+    </section>
+
+    <aside class="cart" aria-label="Your order">
+      <h2>Your order</h2>
+      <div id="cartLines" class="cart-lines"></div>
+
+      <div id="promoRow" class="promo" hidden>
+        <label for="promo">Promo code</label>
+        <input id="promo" type="text" maxlength="12" placeholder="Try RIDE10" autocomplete="off">
+      </div>
+
+      <div id="cartError" class="notice error" hidden></div>
+      <dl id="summary" class="summary" hidden></dl>
+
+      <button id="checkout" class="btn primary wide" disabled>Place order</button>
+      <p class="fine">Demo only: no payments, accounts or personal data. Stock resets when the server restarts.</p>
+    </aside>
+  </main>
+
+  <dialog id="receipt">
+    <div class="receipt-body" id="receiptBody"></div>
+    <form method="dialog"><button class="btn primary wide">Keep shopping</button></form>
+  </dialog>
+
+  <script src="catalog.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

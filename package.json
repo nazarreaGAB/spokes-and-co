@@ -1,0 +1,10 @@
+{
+  "name": "spokes-and-co",
+  "version": "1.0.0",
+  "description": "Bike shop demo: browser UI, Node.js API, compiled GnuCOBOL checkout",
+  "scripts": {
+    "start": "node server.js",
+    "build:cobol": "node scripts/build-cobol.js"
+  },
+  "license": "MIT"
+}
